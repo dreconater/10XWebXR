@@ -61,6 +61,7 @@
         }).then((instance) => {
           unityInstance = instance;
           loadingBar.style.display = "none";
+        unityInstance.Module.WebXR.toggleVR();
           if (fullscreenButton)
           {
             fullscreenButton.onclick = () => {
@@ -81,7 +82,6 @@
       }, false);
       document.addEventListener('onVRSupportedCheck', function (event) {
         enterVRButton.disabled = !event.detail.supported;
-        unityInstance.Module.WebXR.toggleVR();
       }, false);
 
       enterARButton.addEventListener('click', function (event) {
